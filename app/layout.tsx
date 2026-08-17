@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Roboto, JetBrains_Mono, Geist } from "next/font/google";
+import { Space_Grotesk, Roboto, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
+import Navbar from "@/components/Navbar";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const fontSans = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 const fontSerif = Roboto({
   subsets: ["latin"],
@@ -26,8 +29,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
-      <body className={`${geist.variable} ${fontSerif.variable} ${fontMono.variable} antialiased`}>
+    <html lang="en">
+      <body className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable} antialiased`}>
+        <Navbar />
         {children}
       </body>
     </html>

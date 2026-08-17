@@ -1,11 +1,27 @@
+const sections = [
+  { id: "about", title: "About" },
+  { id: "skills", title: "Skills" },
+  { id: "experience", title: "Experience" },
+  { id: "projects", title: "Projects" },
+  { id: "education", title: "Education" },
+];
 
-const Home = () => {
-
+export default function Home() {
   return (
-    <div>
-      <h1 className="text-3xl">Test</h1>
-    </div>
-  )
+    <main id="top">
+      {sections.map((section) => (
+        <section
+          key={section.id}
+          id={section.id}
+          className="scroll-mt-20 px-4 py-24 sm:px-6 lg:px-8"
+        >
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-3xl font-semibold tracking-tight">
+              {section.title}
+            </h2>
+          </div>
+        </section>
+      ))}
+    </main>
+  );
 }
-
-export default Home;
