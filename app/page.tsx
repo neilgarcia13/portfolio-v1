@@ -17,7 +17,7 @@ export default function Home() {
     <main>
       <section
         id="top"
-        className="relative isolate flex scroll-mt-20 items-center overflow-hidden px-4 py-16 sm:px-6 lg:px-8"
+        className="relative isolate flex scroll-mt-20 items-center overflow-hidden px-4 py-20 sm:px-6 lg:px-8"
       >
         <div className="mx-auto grid w-full max-w-6xl gap-14 lg:grid-cols-12 lg:items-end lg:gap-8">
           <div className="lg:col-span-7">
@@ -66,7 +66,7 @@ export default function Home() {
               alt="Neil Andrei Garcia"
               fill
               sizes="(max-width: 1024px) 90vw, 34vw"
-              className="z-10 object-contain object-bottom px-5 pt-5 drop-shadow-[0_24px_32px_rgba(0,0,0,0.5)] sm:px-8 sm:pt-8"
+              className="z-10 object-contain pt-5 drop-shadow-[0_24px_32px_rgba(0,0,0,0.5)] sm:px-8 sm:pt-8"
               priority
             />
           </div>
@@ -77,12 +77,45 @@ export default function Home() {
         <section
           key={section.id}
           id={section.id}
-          className="scroll-mt-20 px-4 py-24 sm:px-6 lg:px-8"
+          className="scroll-mt-20 px-4 py-20 sm:px-6 lg:px-8"
         >
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-semibold tracking-tight">
-              {section.title}
-            </h2>
+            {section.id === "about" ? (
+              <div className="space-y-12">
+                <div className="lg:col-span-4">
+                  <p className="font-mono text-xs tracking-[0.18em] text-primary uppercase">
+                    A little about me
+                  </p>
+                  <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+                    About
+                  </h2>
+                </div>
+                <div className="max-w-full space-y-6 text-base leading-8 text-muted-foreground lg:col-span-8 lg:text-lg text-justify">
+                  <p>
+                    I&apos;m Neil Andrei Garcia, a full-stack web developer
+                    from the Philippines. I build web applications and
+                    business solutions that are scalable, maintainable, and
+                    efficient — because &quot;it works on my machine&quot; is not
+                    usually considered a production strategy.
+                  </p>
+                  <p>
+                    I also use AI-assisted tools to research, prototype,
+                    automate repetitive work, and explore better solutions.
+                    Recently, I&apos;ve been focusing more on AI and automation —
+                    looking at how these technologies can optimize workflows,
+                    improve user experiences, and help teams deliver smarter
+                    solutions faster.
+                  </p>
+                  <p>
+                    Personally, I strongly believe in <strong className="text-foreground">&ldquo;progress over perfection.&rdquo;</strong> I care more about the journey than the destination, treating life as a continuous learning process that leads me toward a better version of myself and the life I truly want and deserve.
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <h2 className="text-3xl font-semibold tracking-tight">
+                {section.title}
+              </h2>
+            )}
           </div>
         </section>
       ))}

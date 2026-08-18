@@ -73,13 +73,6 @@ export default function Navbar() {
                     {item.label}
                   </a>
                 ))}
-                <Button
-                  className="mt-4 w-full"
-                  render={<a href={EMAIL_HREF} onClick={() => setIsMenuOpen(false)} />}
-                >
-                  <RiMailLine aria-hidden="true" />
-                  Email me
-                </Button>
               </nav>
             </SheetContent>
           </Sheet>
