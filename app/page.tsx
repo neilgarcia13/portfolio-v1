@@ -180,6 +180,14 @@ const projectEntries = [
   },
 ];
 
+const educationEntries = [
+  {
+    period: "2021 — 2025",
+    program: "Bachelor of Science in Information Technology",
+    institution: "Quezon City University",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -440,6 +448,37 @@ export default function Home() {
                             </Button>
                           </Link>
                         </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            ) : section.id === "education" ? (
+              <div className="space-y-12">
+                <div>
+                  <p className="font-mono text-xs tracking-[0.18em] text-primary uppercase">
+                    Learning path
+                  </p>
+                  <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+                    Education
+                  </h2>
+                </div>
+                <div className="space-y-0">
+                  {educationEntries.map((entry) => (
+                    <article
+                      key={`${entry.period}-${entry.program}`}
+                      className="grid gap-4 border-t border-border py-8 lg:grid-cols-12 lg:gap-8"
+                    >
+                      <p className="font-mono text-xs tracking-[0.12em] text-primary uppercase lg:col-span-3">
+                        {entry.period}
+                      </p>
+                      <div className="lg:col-span-9">
+                        <h3 className="text-xl font-medium tracking-tight text-foreground">
+                          {entry.program}
+                        </h3>
+                        <p className="mt-1 text-sm text-muted-foreground">
+                          {entry.institution}
+                        </p>
                       </div>
                     </article>
                   ))}

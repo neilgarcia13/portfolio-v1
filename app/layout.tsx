@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Roboto, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 const fontSans = Space_Grotesk({
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable} antialiased`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
