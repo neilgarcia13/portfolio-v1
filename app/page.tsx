@@ -1,8 +1,35 @@
-import { RiFileDownloadLine, RiMailLine } from "@remixicon/react";
+import {
+  RiHtml5Fill,
+  RiCss3Fill,
+  RiTailwindCssFill,
+  RiCodeSSlashFill,
+  RiFlashlightFill,
+  RiJavaFill,
+  RiNextjsLine,
+  RiNodejsFill,
+  RiBankCardLine,
+  RiDatabase2Fill,
+  RiSupabaseFill,
+  RiGithubFill,
+  RiFileDownloadLine,
+  RiGitBranchLine,
+  RiVercelLine,
+  RiJavascriptFill,
+  RiOpenaiFill,
+  RiLinksFill,
+  RiMailLine,
+  RiPhpFill,
+  RiReactjsLine,
+  RiRobot2Line,
+  RiFigmaLine, 
+  RiSlackFill,
+  RiArrowRightDoubleFill,
+} from "@remixicon/react";
 import Image from "next/image";
 
 import DotGrid from "@/components/DotGrid";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 const sections = [
   { id: "about", title: "About" },
@@ -10,6 +37,63 @@ const sections = [
   { id: "experience", title: "Experience" },
   { id: "projects", title: "Projects" },
   { id: "education", title: "Education" },
+];
+
+const skillGroups = [
+  {
+    title: "Frontend Development",
+    skills: [
+      { name: "HTML5", icon: RiHtml5Fill },
+      { name: "CSS3", icon: RiCss3Fill },
+      { name: "TailwindCSS", icon: RiTailwindCssFill },
+      { name: "JavaScript", icon: RiJavascriptFill },
+      { name: "TypeScript", icon: RiCodeSSlashFill },
+      { name: "React", icon: RiReactjsLine },
+      { name: "NextJS", icon: RiNextjsLine },
+      { name: "Vite", icon: RiFlashlightFill },
+    ],
+  },
+  {
+    title: "Backend Development",
+    skills: [
+      { name: "PHP", icon: RiPhpFill },
+      { name: "Laravel", icon: RiCodeSSlashFill },
+      { name: "C#", icon: RiCodeSSlashFill },
+      { name: "Java", icon: RiJavaFill },
+      { name: "NodeJS", icon: RiNodejsFill },
+      { name: "ExpressJS", icon: RiCodeSSlashFill },
+      { name: "MSSQL", icon: RiDatabase2Fill },
+      { name: "MySQL", icon: RiDatabase2Fill },
+      { name: "PostgreSQL", icon: RiDatabase2Fill },
+      { name: "MongoDB", icon: RiDatabase2Fill },
+      { name: "Supabase", icon: RiSupabaseFill },
+      { name: "JWT", icon: RiCodeSSlashFill },
+      { name: "REST APIs", icon: RiLinksFill },
+    ],
+  },
+  {
+    title: "Automations & Integrations",
+    skills: [
+      { name: "Codex", icon: RiRobot2Line },
+      { name: "OpenAI", icon: RiOpenaiFill },
+      { name: "Claude Code", icon: RiRobot2Line },
+      { name: "Playwright", icon: RiRobot2Line },
+      { name: "Stripe", icon: RiBankCardLine },
+      { name: "Webhooks", icon: RiLinksFill },
+    ],
+  },
+  {
+    title: "Developer Tools",
+    skills: [
+      { name: "Git", icon: RiGitBranchLine },
+      { name: "GitHub", icon: RiGithubFill },
+      { name: "VS Code", icon: RiCodeSSlashFill },
+      { name: "Vercel", icon: RiVercelLine },
+      { name: "Figma", icon: RiFigmaLine },
+      { name: "Slack", icon: RiSlackFill },
+      { name: "Jira", icon: RiArrowRightDoubleFill },
+    ],
+  },
 ];
 
 export default function Home() {
@@ -109,6 +193,47 @@ export default function Home() {
                   <p>
                     Personally, I strongly believe in <strong className="text-foreground">&ldquo;progress over perfection.&rdquo;</strong> I care more about the journey than the destination, treating life as a continuous learning process that leads me toward a better version of myself and the life I truly want and deserve.
                   </p>
+                </div>
+              </div>
+            ) : section.id === "skills" ? (
+              <div className="space-y-12">
+                <div>
+                  <p className="font-mono text-xs tracking-[0.18em] text-primary uppercase">
+                    What I work with
+                  </p>
+                  <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+                    Skills
+                  </h2>
+                </div>
+                <div className="space-y-10">
+                  {skillGroups.map((group) => (
+                    <div
+                      key={group.title}
+                      className="grid gap-4 border-t border-border pt-6 lg:grid-cols-12 lg:gap-8"
+                    >
+                      <div className="lg:col-span-4">
+                        <h3 className="text-xl font-medium tracking-tight text-foreground">
+                          {group.title}
+                        </h3>
+                      </div>
+                      <div className="flex flex-wrap content-start gap-2 lg:col-span-8">
+                        {group.skills.map((skill) => {
+                          const Icon = skill.icon;
+
+                          return (
+                            <Badge
+                              key={skill.name}
+                              variant="outline"
+                              className="h-8 px-3 text-sm hover:bg-primary hover:text-black"
+                            >
+                              <Icon aria-hidden="true" />
+                              {skill.name}
+                            </Badge>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             ) : (
