@@ -14,9 +14,9 @@ import {
 } from "@/components/ui/sheet";
 
 const NAVIGATION_ITEMS = [
-  { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
 ] as const;
 
 const NAME = "Neil Andrei Garcia";
@@ -45,10 +45,7 @@ export default function Navbar() {
               {item.label}
             </a>
           ))}
-          <Button className="ml-3" render={<a href={EMAIL_HREF} />}>
-            <RiMailLine aria-hidden="true" />
-            Email me
-          </Button>
+
         </nav>
 
         <div className="md:hidden">
