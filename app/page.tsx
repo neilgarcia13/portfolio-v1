@@ -21,7 +21,7 @@ import {
   RiPhpFill,
   RiReactjsLine,
   RiRobot2Line,
-  RiFigmaLine, 
+  RiFigmaLine,
   RiSlackFill,
   RiArrowRightDoubleFill,
 } from "@remixicon/react";
@@ -93,6 +93,58 @@ const skillGroups = [
       { name: "Slack", icon: RiSlackFill },
       { name: "Jira", icon: RiArrowRightDoubleFill },
     ],
+  },
+];
+
+const experienceEntries = [
+  {
+    period: "December 2025 — Present",
+    role: "Full-stack Web Developer",
+    organization: "Ad-Vanced Digital Adtech Ltd.",
+    responsibilities: [
+      {
+        id: 1,
+        content: "Built and audited core DSP campaign infrastructure, covering unified cross-channel campaigns, creatives, campaign lines, bidding, pacing, frequency capping, supply-path optimization, reporting, feature access, and lifecycle management.",
+        highlight: "Built and audited core DSP campaign infrastructure",
+      },
+      {
+        id: 2,
+        content: "Architected and rebuilt the Ad-Vanced UDI database, designing the PostgreSQL/Supabase schema, account hierarchy, RBAC, RLS, RPCs, reporting structures, and backend architecture for a multi-account DSP platform.",
+        highlight: "Architected and rebuilt the Ad-Vanced UDI database",
+      },
+      {
+        id: 3,
+        content: "Developed and integrated Meta Ads workflows, including agency/client account relationships, campaign management, cross-account access, and Meta-connected campaign operations.",
+        highlight: "Developed and integrated Meta Ads workflows",
+      },
+      {
+        id: 4,
+        content: "Led end-to-end product engineering and QA, using phased architecture reviews, automated testing, RBAC/security validation, responsive UX improvements, production audits, and regression testing to deliver reliable platform-wide features.",
+        highlight: "Led end-to-end product engineering and QA",
+      }
+    ]
+  },
+  {
+    period: "October 2024 — February 2025",
+    role: "Technical Support",
+    organization: "VXI Global Solutions",
+    responsibilities: [
+      {
+        id: 1,
+        content: "Gained hands-on experience in hardware and software troubleshooting.",
+        highlight: "hardware and software troubleshooting",
+      },
+      {
+        id: 2,
+        content: "Resolved technical issues swiftly and proficiently.",
+        highlight: "Resolved technical issues",
+      },
+      {
+        id: 3,
+        content: "Participated in team meetings and shared learnings that drove technical skill improvements.",
+        highlight: "shared learnings",
+      }
+    ]
   },
 ];
 
@@ -233,6 +285,55 @@ export default function Home() {
                         })}
                       </div>
                     </div>
+                  ))}
+                </div>
+              </div>
+            ) : section.id === "experience" ? (
+              <div className="space-y-12">
+                <div>
+                  <p className="font-mono text-xs tracking-[0.18em] text-primary uppercase">
+                    Where I&apos;ve worked
+                  </p>
+                  <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+                    Experience
+                  </h2>
+                </div>
+                <div className="space-y-0">
+                  {experienceEntries.map((entry) => (
+                    <article
+                      key={`${entry.period}-${entry.role}`}
+                      className="grid gap-4 border-t border-border py-8 lg:grid-cols-12 lg:gap-8"
+                    >
+                      <p className="font-mono text-sm text-primary uppercase lg:col-span-3">
+                        {entry.period}
+                      </p>
+                      <div className="lg:col-span-9">
+                        <h3 className="text-xl font-medium tracking-tight text-foreground">
+                          {entry.role}
+                        </h3>
+                        <p className="mt-1 text-sm text-muted-foreground">
+                          {entry.organization}
+                        </p>
+
+                        <ul className="mt-4 list-disc space-y-4 pl-5 text-muted-foreground text-justify">
+                          {entry.responsibilities?.map((responsibility) => {
+                            const [leading, trailing] = responsibility.content.split(
+                              responsibility.highlight,
+                            );
+
+                            return (
+                              <li key={responsibility.id} className="pl-1 leading-7">
+                                {leading}
+                                <strong className="font-semibold text-foreground">
+                                  {responsibility.highlight}
+                                </strong>
+                                {trailing}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    </article>
                   ))}
                 </div>
               </div>
