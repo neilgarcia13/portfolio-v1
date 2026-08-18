@@ -197,13 +197,13 @@ export default function Home() {
       >
         <div className="mx-auto grid w-full max-w-6xl gap-14 lg:grid-cols-12 lg:items-end lg:gap-8">
           <div className="lg:col-span-7">
-            <p className="mb-4 font-medium text-muted-foreground">
+            <p className="mb-4 font-medium">
               Hi there! I&apos;m
             </p>
             <h1 className="max-w-3xl text-5xl font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl">
               Neil Andrei.👋
             </h1>
-            <p className="mt-7 max-w-xl text-lg leading-8 text-muted-foreground sm:text-xl">
+            <p className="mt-7 max-w-xl text-lg leading-8 sm:text-xl">
               I, Neil Andrei S. Garcia, welcome you to my humble web
               portfolio to know more about myself, obviously.
             </p>
@@ -267,7 +267,7 @@ export default function Home() {
                     About
                   </h2>
                 </div>
-                <div className="max-w-full space-y-6 text-base leading-8 text-muted-foreground lg:col-span-8 lg:text-lg text-justify">
+                <div className="max-w-full space-y-6 text-base leading-8 lg:col-span-8 lg:text-lg text-justify">
                   <p>
                     I&apos;m Neil Andrei Garcia, a full-stack web developer
                     from the Philippines. I build web applications and
@@ -317,7 +317,7 @@ export default function Home() {
                             <Badge
                               key={skill.name}
                               variant="outline"
-                              className="h-8 px-3 text-sm hover:bg-primary hover:text-black"
+                              className="h-8 px-3 text-sm hover:bg-primary hover:text-primary-foreground"
                             >
                               <Icon aria-hidden="true" />
                               {skill.name}
@@ -352,11 +352,11 @@ export default function Home() {
                         <h3 className="text-xl font-medium tracking-tight text-foreground">
                           {entry.role}
                         </h3>
-                        <p className="mt-1 text-sm text-muted-foreground">
+                        <p className="mt-1 text-sm">
                           {entry.organization}
                         </p>
 
-                        <ul className="mt-4 list-disc space-y-4 pl-5 text-muted-foreground text-justify">
+                        <ul className="mt-4 list-disc space-y-4 pl-5 text-justify">
                           {entry.responsibilities?.map((responsibility) => {
                             const [leading, trailing] = responsibility.content.split(
                               responsibility.highlight,
@@ -404,7 +404,7 @@ export default function Home() {
                             className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
                           />
                         ) : (
-                          <div className="flex h-full flex-col items-center justify-center gap-2 p-6 text-center text-muted-foreground">
+                          <div className="flex h-full flex-col items-center justify-center gap-2 p-6 text-center">
                             <span className="font-mono text-xs tracking-[0.16em] text-primary uppercase">
                               Project mockup
                             </span>
@@ -421,7 +421,7 @@ export default function Home() {
                         <h3 className="mt-3 text-2xl font-medium tracking-tight text-foreground">
                           {project.title}
                         </h3>
-                        <p className="max-w-2xl text-base leading-7 text-muted-foreground text-justify">
+                        <p className="max-w-2xl text-base leading-7 text-justify">
                           {project.description}
                         </p>
                         <div className="mt-5 flex flex-wrap gap-2">
@@ -476,7 +476,7 @@ export default function Home() {
                         <h3 className="text-xl font-medium tracking-tight text-foreground">
                           {entry.program}
                         </h3>
-                        <p className="mt-1 text-sm text-muted-foreground">
+                        <p className="mt-1 text-sm">
                           {entry.institution}
                         </p>
                       </div>

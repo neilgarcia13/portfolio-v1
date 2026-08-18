@@ -40,7 +40,7 @@ export default function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors border-b-2 hover:border-b-primary"
+              className="rounded-md px-3 py-2 text-sm transition-colors border-b-2 hover:border-b-primary"
             >
               {item.label}
             </a>
@@ -68,7 +68,7 @@ export default function Navbar() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="rounded-md px-3 py-3 text-sm text-muted-foreground transition-colors border-b-2 hover:border-b-primary"
+                    className="rounded-md px-3 py-3 text-sm transition-colors border-b-2 hover:border-b-primary"
                   >
                     {item.label}
                   </a>

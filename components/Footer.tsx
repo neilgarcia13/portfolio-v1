@@ -49,13 +49,13 @@ const Footer = () => {
             <blockquote className="mt-4 text-2xl leading-tight font-medium tracking-tight text-foreground sm:text-3xl">
               &ldquo;Progress over <span className="text-primary">perfection.</span>&rdquo;
             </blockquote>
-            <p className="mt-4 text-sm leading-6 text-muted-foreground">
-              Life is a continuous learning process. You can't convince me otherwise.
+            <p className="mt-4 text-sm leading-6">
+              Life is a continuous learning process. You can&apos;t convince me otherwise.
             </p>
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-6 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-16 flex flex-col gap-6 border-t border-border pt-6 text-sm sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} Neil Andrei Garcia. All rights reserved.</p>
         </div>
       </div>
