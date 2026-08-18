@@ -418,7 +418,7 @@ export default function Home() {
                         <p className="font-mono text-xs tracking-[0.12em] text-primary uppercase">
                           {project.category}
                         </p>
-                        <h3 className="mt-3 text-2xl font-medium tracking-tight text-foreground">
+                        <h3 className="my-3 text-2xl font-medium tracking-tight text-foreground">
                           {project.title}
                         </h3>
                         <p className="max-w-2xl text-base leading-7 text-justify">

@@ -20,19 +20,19 @@ const Footer = () => {
               Have an idea, a problem, or a project that needs building?
             </h2>
             <div>
-              <Link href="mailto:neilgrande2002@gmail.com">
+              <Link href="mailto:neilgrande2002@gmail.com" target="_blank" rel="noopener noreferrer">
                 <Button variant="link" className="cursor-pointer">
                   <RiMailLine aria-hidden="true" />
                   Email
                 </Button>
               </Link>
-              <Link href="https://www.linkedin.com/in/neil-garcia-/">
+              <Link href="https://www.linkedin.com/in/neil-garcia-/" target="_blank" rel="noopener noreferrer">
                 <Button variant="link" className="cursor-pointer">
                   <RiLinkedinBoxFill aria-hidden="true" />
                   LinkedIn
                 </Button>
               </Link>
-              <Link href="https://www.linkedin.com/in/neil-garcia-/">
+              <Link href="https://github.com/neilgarcia13" target="_blank" rel="noopener noreferrer">
                 <Button variant="link" className="cursor-pointer">
                   <RiGithubLine aria-hidden="true" />
                   GitHub
