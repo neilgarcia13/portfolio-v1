@@ -9,8 +9,10 @@ import {
   RiNodejsFill,
   RiBankCardLine,
   RiDatabase2Fill,
+  RiExternalLinkLine,
   RiSupabaseFill,
   RiGithubFill,
+  RiGithubLine,
   RiFileDownloadLine,
   RiGitBranchLine,
   RiVercelLine,
@@ -30,6 +32,7 @@ import Image from "next/image";
 import DotGrid from "@/components/DotGrid";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 const sections = [
   { id: "about", title: "About" },
@@ -148,6 +151,35 @@ const experienceEntries = [
   },
 ];
 
+const projectEntries = [
+  {
+    title: "Supreme Barbers",
+    category: "Business solution",
+    image: "/project-mockups/supreme-barbers.png",
+    description: "A barber availability and reservation system built to help customers find available barbers and book reservations before visiting the shop. Deployment is a work-in-progress.",
+    technologies: ["Laravel", "TypeScript", "React", "InertiaJS", "SQLite"],
+    repositoryUrl: "https://github.com/neilgarcia13/supreme-barbers",
+  },
+  {
+    title: "Pricely!",
+    category: "Web application",
+    image: "/project-mockups/pricely.png",
+    description: "A selling price calculator application for a small food business where you can compute regular and discounted prices based on ingredients and other supplies costs.",
+    technologies: ["JavaScript", "React", "Vite"],
+    liveUrl: "https://pricely-biz.vercel.app/",
+    repositoryUrl: "https://github.com/neilgarcia13/pricely",
+  },
+  {
+    title: "Recipe Finder",
+    category: "Web application",
+    image: "/project-mockups/recipe-finder.png",
+    description: "A simple recipe-finder app to fetch and show actual data dynamically from a public API.",
+    technologies: ["JavaScript", "HTML5", "CSS3"],
+    liveUrl: "https://neilgarcia13.github.io/recipe-finder-app/",
+    repositoryUrl: "https://github.com/neilgarcia13/recipe-finder-app",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -169,11 +201,12 @@ export default function Home() {
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-2">
-              <Button size="lg" render={<a href="#projects" />}>
+              <Button nativeButton={false} size="lg" render={<a href="#projects" />}>
                 <RiFileDownloadLine aria-hidden="true" />
                 Download CV
               </Button>
               <Button
+                nativeButton={false}
                 variant="outline"
                 size="lg"
                 render={<a href="mailto:neilgrande2002@gmail.com" />}
@@ -257,7 +290,7 @@ export default function Home() {
                     Skills
                   </h2>
                 </div>
-                <div className="space-y-10">
+                <div className="space-y-12">
                   {skillGroups.map((group) => (
                     <div
                       key={group.title}
@@ -332,6 +365,81 @@ export default function Home() {
                             );
                           })}
                         </ul>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            ) : section.id === "projects" ? (
+              <div className="space-y-12">
+                <div>
+                  <p className="font-mono text-xs tracking-[0.18em] text-primary uppercase">
+                    Selected work
+                  </p>
+                  <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+                    Projects
+                  </h2>
+                </div>
+                <div className="space-y-6">
+                  {projectEntries.map((project, index) => (
+                    <article
+                      key={`${project.title}-${index}`}
+                      className="group grid gap-6 border-t border-border py-8 lg:grid-cols-12 lg:gap-8"
+                    >
+                      <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-card/60 lg:col-span-5 lg:aspect-4/3">
+                        {project.image ? (
+                          <Image
+                            src={project.image}
+                            alt={`${project.title} project mockup`}
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 42vw"
+                            className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                          />
+                        ) : (
+                          <div className="flex h-full flex-col items-center justify-center gap-2 p-6 text-center text-muted-foreground">
+                            <span className="font-mono text-xs tracking-[0.16em] text-primary uppercase">
+                              Project mockup
+                            </span>
+                            <span className="text-sm">
+                              Add an image path to this project&apos;s <code>image</code> field.
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                      <div className="lg:col-span-7">
+                        <p className="font-mono text-xs tracking-[0.12em] text-primary uppercase">
+                          {project.category}
+                        </p>
+                        <h3 className="mt-3 text-2xl font-medium tracking-tight text-foreground">
+                          {project.title}
+                        </h3>
+                        <p className="max-w-2xl text-base leading-7 text-muted-foreground text-justify">
+                          {project.description}
+                        </p>
+                        <div className="mt-5 flex flex-wrap gap-2">
+                          {project.technologies.map((technology) => (
+                            <Badge key={technology} variant="outline">
+                              {technology}
+                            </Badge>
+                          ))}
+                        </div>
+                        <div className="mt-6 flex flex-wrap gap-4 text-sm">
+                          {project.liveUrl && (
+                            <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                              <Button className="cursor-pointer">
+                                <RiExternalLinkLine aria-hidden="true" />
+                                Live URL
+                              </Button>
+                            </Link>
+                          )}
+
+                          <Link href={project.repositoryUrl} target="_blank" rel="noopener noreferrer">
+                            <Button variant="outline" className="cursor-pointer">
+                              <RiGithubLine aria-hidden="true" />
+                              Open Repository
+                            </Button>
+                          </Link>
+                        </div>
                       </div>
                     </article>
                   ))}
