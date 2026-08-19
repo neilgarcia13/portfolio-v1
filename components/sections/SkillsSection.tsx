@@ -1,11 +1,11 @@
-import ScrollReveal from "../effects/ScrollReveal";
+import ScrollReveal from "@/components/effects/ScrollReveal";
 import { RoughNotation } from "react-rough-notation";
 import { Badge } from "../ui/badge";
 import { skillGroups } from "@/data/portfolio";
 
 const SkillsSection = () => {
   return (
-    <section className="scroll-mt-20 px-4 py-20 sm:px-6 lg:px-8">
+    <section id="skills" className="scroll-mt-20 px-4 py-20 sm:px-6 lg:px-8">
       <ScrollReveal className="mx-auto max-w-6xl">
         <div className="space-y-12">
           <div>

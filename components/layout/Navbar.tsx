@@ -19,7 +19,7 @@ const NAVIGATION_ITEMS = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-] as const;
+];
 
 const NAME = "Neil Andrei Garcia";
 const emptySubscribe = () => () => { };

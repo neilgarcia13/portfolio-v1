@@ -1,9 +1,9 @@
-import ScrollReveal from "../effects/ScrollReveal";
+import ScrollReveal from "@/components/effects/ScrollReveal";
 import { RoughNotation } from "react-rough-notation";
 
 const AboutSection = () => {
   return (
-    <section className="scroll-mt-20 px-4 py-20 sm:px-6 lg:px-8">
+    <section id="about" className="scroll-mt-20 px-4 py-20 sm:px-6 lg:px-8">
       <ScrollReveal className="mx-auto max-w-6xl">
         <div className="space-y-12">
           <div className="lg:col-span-4">

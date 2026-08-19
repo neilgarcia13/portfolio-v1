@@ -9,17 +9,13 @@ import {
   RiNodejsFill,
   RiBankCardLine,
   RiDatabase2Fill,
-  RiExternalLinkLine,
   RiSupabaseFill,
   RiGithubFill,
-  RiGithubLine,
-  RiFileDownloadLine,
   RiGitBranchLine,
   RiVercelLine,
   RiJavascriptFill,
   RiOpenaiFill,
   RiLinksFill,
-  RiMailLine,
   RiPhpFill,
   RiReactjsLine,
   RiRobot2Line,
@@ -27,6 +23,13 @@ import {
   RiSlackFill,
   RiArrowRightDoubleFill,
 } from "@remixicon/react";
+
+import type {
+  Education,
+  Experience,
+  Project,
+  SkillGroup,
+} from "@/types/portfolio";
 
 export const skillGroups = [
   {
@@ -83,7 +86,7 @@ export const skillGroups = [
       { name: "Jira", icon: RiArrowRightDoubleFill },
     ],
   },
-];
+] satisfies SkillGroup[];
 
 export const experiences = [
   {
@@ -135,7 +138,7 @@ export const experiences = [
       }
     ]
   },
-];
+] satisfies Experience[];
 
 export const projects = [
   {
@@ -164,7 +167,7 @@ export const projects = [
     liveUrl: "https://neilgarcia13.github.io/recipe-finder-app/",
     repositoryUrl: "https://github.com/neilgarcia13/recipe-finder-app",
   },
-];
+] satisfies Project[];
 
 export const education = [
   {
@@ -172,4 +175,4 @@ export const education = [
     program: "Bachelor of Science in Information Technology",
     institution: "Quezon City University",
   },
-];
+] satisfies Education[];
