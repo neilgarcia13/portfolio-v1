@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import { RiMenuLine, RiMoonLine, RiSunLine } from "@remixicon/react";
 
 import { Button } from "@/components/ui/button";
+import ThemeLogo from "@/components/ThemeLogo";
 import {
   Sheet,
   SheetContent,
@@ -49,9 +50,10 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a
           href="#top"
-          className="text-sm font-semibold tracking-tight text-foreground"
+          className="rounded-md text-foreground transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          aria-label={`${NAME} home`}
         >
-          {NAME}
+          <ThemeLogo priority className="h-10 w-10 object-contain" />
         </a>
 
         <nav aria-label="Primary navigation" className="hidden items-center gap-1 md:flex">

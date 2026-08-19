@@ -6,6 +6,7 @@ import {
   RiMailLine,
 } from "@remixicon/react";
 import { Button } from "./ui/button";
+import ThemeLogo from "@/components/ThemeLogo";
 
 const Footer = () => {
   return (
@@ -57,6 +58,7 @@ const Footer = () => {
 
         <div className="mt-16 flex flex-col gap-6 border-t border-border pt-6 text-sm sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} Neil Andrei Garcia. All rights reserved.</p>
+          <ThemeLogo className="h-12 w-12 object-contain" />
         </div>
       </div>
     </footer>
