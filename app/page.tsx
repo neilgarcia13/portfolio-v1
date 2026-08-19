@@ -1,3 +1,5 @@
+"use client";
+import { RoughNotation } from "react-rough-notation";
 import {
   RiHtml5Fill,
   RiCss3Fill,
@@ -204,6 +206,7 @@ export default function Home() {
             <p className="mb-4 font-medium">
               Hi there! I am
             </p>
+
             <h1 className="max-w-3xl text-5xl font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl">
               Neil Andrei.👋
             </h1>
@@ -242,11 +245,11 @@ export default function Home() {
             </div>
             <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_35%,color-mix(in_oklch,var(--primary)_22%,transparent),transparent_58%)]" />
             <Image
-              src="/profile.png"
+              src="/profile1.png"
               alt="Neil Andrei Garcia"
               fill
               sizes="(max-width: 1024px) 90vw, 34vw"
-              className="z-10 object-contain pt-5 drop-shadow-[0_24px_32px_rgba(0,0,0,0.5)] sm:px-8 sm:pt-8"
+              className="z-10 object-cover pt-5 drop-shadow-[0_24px_32px_rgba(0,0,0,0.5)] sm:px-8 sm:pt-8"
               priority
             />
           </div>
@@ -287,7 +290,18 @@ export default function Home() {
                     solutions faster.
                   </p>
                   <p>
-                    Personally, I strongly believe in <strong className="text-foreground">&ldquo;progress over perfection.&rdquo;</strong> I care more about the journey than the destination, treating life as a continuous learning process that leads me toward a better version of myself and the life I truly want and deserve.
+                    Personally, I strongly believe in {' '}
+                    <strong className="text-foreground">
+                      <RoughNotation
+                        type="underline"
+                        color="#226300"
+                        strokeWidth={4}
+                        padding={4}
+                        show>
+                        &ldquo;progress over perfection.&rdquo;
+                      </RoughNotation>
+                    </strong>
+                    {' '}I care more about the journey than the destination, treating life as a continuous learning process that leads me toward a better version of myself and the life I truly want and deserve.
                   </p>
                 </div>
               </div>
@@ -297,8 +311,16 @@ export default function Home() {
                   <p className="font-mono text-xs tracking-[0.18em] text-primary uppercase">
                     What I work with
                   </p>
+
                   <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-                    Skills
+                    <RoughNotation
+                      type="underline"
+                      color="#226300"
+                      strokeWidth={8}
+                      padding={8}
+                      show>
+                      Skills
+                    </RoughNotation>
                   </h2>
                 </div>
                 <div className="space-y-12">
@@ -339,7 +361,14 @@ export default function Home() {
                     Where I&apos;ve worked
                   </p>
                   <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-                    Experience
+                    <RoughNotation
+                      type="underline"
+                      color="#226300"
+                      strokeWidth={8}
+                      padding={8}
+                      show>
+                      Experience
+                    </RoughNotation>
                   </h2>
                 </div>
                 <div className="space-y-0">
@@ -388,7 +417,14 @@ export default function Home() {
                     Selected work
                   </p>
                   <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-                    Projects
+                    <RoughNotation
+                      type="underline"
+                      color="#226300"
+                      strokeWidth={8}
+                      padding={8}
+                      show>
+                      Projects
+                    </RoughNotation>
                   </h2>
                 </div>
                 <div className="space-y-6">
@@ -494,7 +530,8 @@ export default function Home() {
             )}
           </ScrollReveal>
         </section>
-      ))}
-    </main>
+      ))
+      }
+    </main >
   );
 }
