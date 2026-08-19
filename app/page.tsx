@@ -30,6 +30,7 @@ import {
 import Image from "next/image";
 
 import DotGrid from "@/components/DotGrid";
+import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
@@ -195,17 +196,19 @@ export default function Home() {
         id="top"
         className="relative isolate flex scroll-mt-20 items-center overflow-hidden px-4 py-20 sm:px-6 lg:px-8"
       >
-        <div className="mx-auto grid w-full max-w-6xl gap-14 lg:grid-cols-12 lg:items-end lg:gap-8">
+        <ScrollReveal
+          animateOnMount
+          className="mx-auto grid w-full max-w-6xl gap-14 lg:grid-cols-12 lg:items-end lg:gap-8"
+        >
           <div className="lg:col-span-7">
             <p className="mb-4 font-medium">
-              Hi there! I&apos;m
+              Hi there! I am
             </p>
             <h1 className="max-w-3xl text-5xl font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl">
               Neil Andrei.👋
             </h1>
-            <p className="mt-7 max-w-xl text-lg leading-8 sm:text-xl">
-              I, Neil Andrei S. Garcia, welcome you to my humble web
-              portfolio to know more about myself, obviously.
+            <p className="mt-7 max-w-xl leading-8">
+              I build scalable web applications and business solutions that make complex work feel simpler—solving one problem at a time.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-2">
@@ -247,7 +250,7 @@ export default function Home() {
               priority
             />
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {sections.map((section) => (
@@ -256,7 +259,7 @@ export default function Home() {
           id={section.id}
           className="scroll-mt-20 px-4 py-20 sm:px-6 lg:px-8"
         >
-          <div className="mx-auto max-w-6xl">
+          <ScrollReveal className="mx-auto max-w-6xl scroll-smooth">
             {section.id === "about" ? (
               <div className="space-y-12">
                 <div className="lg:col-span-4">
@@ -469,7 +472,7 @@ export default function Home() {
                       key={`${entry.period}-${entry.program}`}
                       className="grid gap-4 border-t border-border py-8 lg:grid-cols-12 lg:gap-8"
                     >
-                      <p className="font-mono text-xs tracking-[0.12em] text-primary uppercase lg:col-span-3">
+                      <p className="font-mono text-sm text-primary uppercase lg:col-span-3">
                         {entry.period}
                       </p>
                       <div className="lg:col-span-9">
@@ -489,7 +492,7 @@ export default function Home() {
                 {section.title}
               </h2>
             )}
-          </div>
+          </ScrollReveal>
         </section>
       ))}
     </main>
