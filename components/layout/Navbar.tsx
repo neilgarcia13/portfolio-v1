@@ -1,11 +1,9 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 import { RiMenuLine, RiMoonLine, RiSunLine } from "@remixicon/react";
-
 import { Button } from "@/components/ui/button";
-import ThemeLogo from "@/components/ThemeLogo";
+import ThemeLogo from "@/components/layout/ThemeLogo";
 import {
   Sheet,
   SheetContent,
@@ -14,6 +12,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+
+import { useState, useSyncExternalStore } from "react";
 
 const NAVIGATION_ITEMS = [
   { label: "Skills", href: "#skills" },

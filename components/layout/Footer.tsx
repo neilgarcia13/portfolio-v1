@@ -1,12 +1,12 @@
-import Link from "next/link";
-
 import {
   RiGithubLine,
   RiLinkedinBoxFill,
   RiMailLine,
 } from "@remixicon/react";
-import { Button } from "./ui/button";
-import ThemeLogo from "@/components/ThemeLogo";
+import { Button } from "../ui/button";
+import ThemeLogo from "@/components/layout/ThemeLogo";
+
+import Link from "next/link";
 
 const Footer = () => {
   return (

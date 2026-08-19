@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Roboto, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
+import { ThemeProvider } from "@/components/layout/ThemeProvider";
 
 const fontSans = Space_Grotesk({
   subsets: ["latin"],
