@@ -64,7 +64,7 @@ export const skillGroups = [
     ],
   },
   {
-    title: "Automations & Integrations",
+    title: "Automation & Integrations",
     skills: [
       { name: "Codex", icon: RiRobot2Line },
       { name: "OpenAI", icon: RiOpenaiFill },

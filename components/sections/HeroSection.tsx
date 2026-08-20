@@ -23,8 +23,17 @@ const HeroSection = () => {
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-2">
-            <Button nativeButton={false} size="lg" render={<a href="#projects" />}>
-              <RiFileDownloadLine />
+            <Button
+              nativeButton={false}
+              size="lg"
+              render={
+                <a
+                  href="/cv/technical-resume-v2.pdf"
+                  download="technical-resume-v2.pdf"
+                />
+              }
+            >
+              <RiFileDownloadLine aria-hidden="true" />
               Download CV
             </Button>
             <Button
