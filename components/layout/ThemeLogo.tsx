@@ -26,6 +26,7 @@ export default function ThemeLogo({ className, priority = false }: ThemeLogoProp
       height={42}
       priority={priority}
       className={className}
+      loading="eager"
     />
   );
 }

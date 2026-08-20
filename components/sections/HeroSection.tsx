@@ -53,7 +53,7 @@ const HeroSection = () => {
           </div>
           <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_35%,color-mix(in_oklch,var(--primary)_22%,transparent),transparent_58%)]" />
           <Image
-            src="/profile1.png"
+            src="/profile-no-bg.png"
             alt="Neil Andrei Garcia"
             fill
             sizes="(max-width: 1024px) 90vw, 34vw"
